@@ -1,0 +1,43 @@
+{
+  "name": "dsh-sentry-regression",
+  "version": "0.1.0-preview.3",
+  "description": "Sentry-guided local reproduction and matching before/after regression receipts.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.1-rc.5 <0.2.2-0"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "scripts",
+    "skills",
+    "examples",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md",
+    "THIRD_PARTY_LICENSES",
+    "VALIDATION.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "sentry-regression"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "check": "node tooling/check-package.mjs",
+    "test": "node --test test/*.test.mjs",
+    "pack:plugin": "npm pack --ignore-scripts"
+  }
+}
